@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="22.058594"
+   height="22.058594"
+   viewBox="0 0 22.058594 22.058594"
+   fill="none"
+   stroke="currentColor"
+   stroke-width="2"
+   stroke-linecap="round"
+   stroke-linejoin="round"
+   class="feather feather-clock"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1" />
+  <path
+     id="path1"
+     style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:3.12573;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.9"
+     d="M 11.029296,0 A 11.029191,11.029191 0 0 0 0,11.029297 11.029191,11.029191 0 0 0 11.029296,22.058594 11.029191,11.029191 0 0 0 22.058593,11.029297 11.029191,11.029191 0 0 0 11.029296,0 Z m 0.06641,3.265625 c 1.038677,0 1.90039,0.8597597 1.90039,1.8984375 v 4.8281246 l 2.94922,1.4726569 c 0.929226,0.464475 1.314302,1.621666 0.849608,2.550781 -0.464475,0.929227 -1.619712,1.314303 -2.548827,0.849609 l -4,-2 C 9.6041465,12.544163 9.1952665,11.88183 9.1953155,11.164062 V 5.1640625 c 0,-1.0386778 0.8617125,-1.8984375 1.9003905,-1.8984375 z" />
+</svg>

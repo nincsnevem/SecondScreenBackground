@@ -52,7 +52,7 @@ function contrastColor(hex) {
 
 
     if (!IsColored(hex)) {
-        console.log(`red`);
+
         return "#fc3f10"
     }
 
@@ -60,7 +60,7 @@ function contrastColor(hex) {
         let ir = 256 - Math.max(r, 20);
         let ig = 256 - Math.max(g, 20);
         let ib = 256 - Math.max(b, 20);
-        console.log(`vibrant`);
+
         return `rgb(${ir}, ${ig}, ${ib})`;
     }
 
@@ -68,13 +68,13 @@ function contrastColor(hex) {
         let ir = r * 1.5;
         let ig = g * 1.5;
         let ib = b * 1.5;
-        console.log("Dark");
+
         return `rgb(${ir}, ${ig}, ${ib})`;
     } else {
         let ir = r * 1.2;
         let ig = g * 1.2;
         let ib = b * 1.2;
-        console.log("Light");
+
         return `rgb(${ir}, ${ig}, ${ib})`;
     }
 
@@ -134,4 +134,5 @@ function IsDark(hex) {
         return true;
     }
     return false;
+
 }

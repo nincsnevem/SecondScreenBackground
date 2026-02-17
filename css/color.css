@@ -232,16 +232,17 @@ body::-webkit-scrollbar-button {
 }
 
 #digitalClockContainer {
+    visibility: hidden;
     position: absolute;
     margin-top: 22vh;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: opacity 0.8s ease;
-    visibility: hidden;
 }
 
 #analogClockContainer {
+    visibility: hidden;
     position: absolute;
     left: 26vw;
     justify-self: center;
@@ -250,7 +251,6 @@ body::-webkit-scrollbar-button {
     height: 40vw;
     width: 40vw;
     transition: opacity 0.8s ease;
-    visibility: hidden;
 }
 
 #analogBackground {

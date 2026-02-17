@@ -120,7 +120,7 @@ body::-webkit-scrollbar-button {
     background-color: var(--bgcolor);
     align-self: center;
     transition: all 0.4s ease;
-    margin: 0.5vw;
+    margin: max(0.5vw,10px);
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
@@ -348,5 +348,6 @@ body::-webkit-scrollbar-button {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
 
 

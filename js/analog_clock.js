@@ -19,7 +19,7 @@ const shadowSecDistance = 14;
 
 
 function setHands(ms, seconds, minutes, hours) {
-    hoursDeg = (hours % 12) * 30 + minutes / 2 + seconds / 60 + ms / 120000;
+    hoursDeg = (hours % 12) * 30 + minutes / 2 + seconds / 120 + ms / 120000;
     minutesDeg = minutes * 6 + seconds / 10 + ms * 0.0001;
     secondsDeg = seconds * 6 + ms * 0.006;
 

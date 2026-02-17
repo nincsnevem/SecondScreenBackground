@@ -142,8 +142,8 @@ body::-webkit-scrollbar-button {
     background-clip: padding-box;
     transform: rotate(0.05deg);
     padding: 0;
-    padding-left: 0.5vw;
-    padding-right: 0.5vw;
+    padding-left: max(0.5vw,10px);
+    padding-right: max(0.5vw,10px;
     margin: 0;
     margin-left: 0.5vw;
     height: max(2vw, 40px);
@@ -348,4 +348,5 @@ body::-webkit-scrollbar-button {
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');
+
 

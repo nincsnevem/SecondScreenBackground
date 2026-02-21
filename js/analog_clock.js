@@ -2,17 +2,18 @@ const hourHand = document.getElementById("analogHour");
 const minuteHand = document.getElementById("analogMinute");
 const secondHand = document.getElementById("analogSecond");
 
-const shadowHourX = 0;
-const shadowHourY = 0;
-const shadowHourDistance = 10;
+let shadowHourX = 0;
+let shadowHourY = 0;
+let shadowHourDistance = 10;
 
-const shadowMinX = 0;
-const shadowMinY = 0;
-const shadowMinDistance = 12;
+let shadowMinX = 0;
+let shadowMinY = 0;
+let shadowMinDistance = 12;
 
-const shadowSecX = 0;
-const shadowSecY = 0;
-const shadowSecDistance = 14;
+let shadowSecX = 0;
+let shadowSecY = 0;
+let shadowSecDistance = 14;
+
 
 
 
@@ -36,14 +37,14 @@ function setShadow(ms, seconds, minutes, hours) {
     secondsRad = (Math.PI / 180) * (seconds * 6 + ms * 0.006);
 
 
-    const shadowHourX = Math.sin(hoursRad) * shadowHourDistance;
-    const shadowHourY = Math.max(Math.cos(-hoursRad) * shadowHourDistance, 0);
+    let shadowHourX = Math.sin(hoursRad) * shadowHourDistance;
+    let shadowHourY = Math.max(Math.cos(-hoursRad) * shadowHourDistance, 0);
 
-    const shadowMinX = Math.sin(minutesRad) * shadowHourDistance;
-    const shadowMinY = Math.max(Math.cos(-minutesRad) * shadowMinDistance, 0);
+    let shadowMinX = Math.sin(minutesRad) * shadowHourDistance;
+    let shadowMinY = Math.max(Math.cos(-minutesRad) * shadowMinDistance, 0);
 
-    const shadowSecX = Math.sin(secondsRad) * shadowHourDistance;
-    const shadowSecY = Math.max(Math.cos(-secondsRad) * shadowSecDistance, 0);
+    let shadowSecX = Math.sin(secondsRad) * shadowHourDistance;
+    let shadowSecY = Math.max(Math.cos(-secondsRad) * shadowSecDistance, 0);
 
 
 
@@ -59,10 +60,13 @@ function setShadow(ms, seconds, minutes, hours) {
 
 
 function updateClock() {
-    const now = new Date();
+    let now = new Date();
 
-    setHands(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
-    setShadow(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
+
+    if (analogClock.style.getPropertyValue("visibility") === "visible") {
+        setHands(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
+        setShadow(now.getMilliseconds(), now.getSeconds(), now.getMinutes(), now.getHours());
+    }
     requestAnimationFrame(updateClock);
 }
 requestAnimationFrame(updateClock);

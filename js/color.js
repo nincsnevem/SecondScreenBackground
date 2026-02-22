@@ -25,22 +25,26 @@ function setBackground() {
 function isLight(hex) {
     // Remove '#' if present
     hex = hex.replace("#", "");
-    const limit = 170
-        // Parse RGB values
+    const limit = 170;
+    // Parse RGB values
     const r = parseInt(hex.substring(0, 2), 16);
     const g = parseInt(hex.substring(2, 4), 16);
     const b = parseInt(hex.substring(4, 6), 16);
 
-    const brightness = (0.299 * r + 0.587 * g + 0.114 * b);
+    const brightness = (0.299 * r + 0.587 * g + 0.15 * b);
 
     if (brightness > 165) {
-        return true
+        return true;
+    }
+    if ((r > 250 || g > 250 || b > 250) && Math.min(r, g, b) < 10) {
+        return true;
     }
     if (r > limit && g > limit && b > limit) {
-        return true
+        return true;
     } else {
-        return false
+        return false;
     }
+
 }
 
 

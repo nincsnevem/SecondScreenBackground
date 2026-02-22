@@ -67,6 +67,7 @@ body::-webkit-scrollbar-button {
     display: flex;
     flex: row;
     flex-grow: 1;
+    overflow: hidden;
     filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.4));
 }
 
@@ -134,6 +135,7 @@ body::-webkit-scrollbar-button {
 }
 
 .clockOption {
+    pointer-events: none;
     color: var(--altcolor);
     background-color: var(--bgcolor);
     border: none;
@@ -163,6 +165,7 @@ body::-webkit-scrollbar-button {
 }
 
 #clockSettings:hover .clockOption {
+    pointer-events: auto;
     flex-grow: 1;
     opacity: 1;
     transition: flex-grow 0.8s ease, opacity 0.8s ease;
@@ -345,24 +348,26 @@ body::-webkit-scrollbar-button {
     margin: 0;
     height: auto;
     width: fit-content;
+    height: fit-content;
     /**/
     color: var(--altcolor);
     letter-spacing: 2px;
-    font-family: "Nova Mono", monospace;
-    font-weight: 400;
-    font-style: normal;
-    text-align: center;
-    text-shadow: 0px 15px 10px rgba(0, 0, 0, 0.3), 0px -15px 30px var(--bgcolorlight);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1;
-    transform: translateX("0px");
-    transform: translateY("0px");
+    transform: translate(0, 0);
     visibility: visible;
 }
 
+#dvdLogo>svg {
+    height: 8vmax;
+    fill: var(--altcolor);
+    filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.797)) drop-shadow(0px -10px 8px var(--bgcolorlight));
+}
+
 .game-anim-option {
+    pointer-events: none;
     height: max(2vw, 40px);
     /**/
     color: var(--altcolor);
@@ -399,11 +404,12 @@ body::-webkit-scrollbar-button {
 
 #gameAnimationSettings:hover {
     transition: all 0.8s;
-    width: 16vw;
+    width: 20vw;
     padding-right: 0.5vw;
 }
 
 #gameAnimationSettings:hover .game-anim-option {
+    pointer-events: auto;
     opacity: 1;
     transition: flex-grow 0.8s ease, opacity 0.8s ease;
     flex-grow: 1;
@@ -426,6 +432,21 @@ body::-webkit-scrollbar-button {
 
 #page {
     position: relative;
+}
+
+.snakeContainer {
+    transition: opacity 0.8s ease;
+}
+
+.snakeElement {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--altcolor);
+    box-shadow: inset 0 0 2.5vmin color-mix(in srgb, var(--bgcolor) 60%, var(--bgcolor) 60%);
+    width: 4.8vmin;
+    height: 4.8vmin;
+    transform: translate(0, 0);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');

@@ -7,7 +7,7 @@ let objY = dvdObject.offsetHeight;
 
 
 
-let velocity = 3;
+let velocity = 4;
 let direction = (Math.random() * (50 - 40) + 40) * Math.PI / 180;
 let x = 0;
 let y = 0;
@@ -37,7 +37,7 @@ function updateLogo(currentTime) {
         objX = dvdObject.offsetWidth;
         objY = dvdObject.offsetHeight;
 
-        moveLogo(x, y);
+
         if (x + objX > screenX) {
             velocityX *= -1;
             x = screenX - objX;
@@ -55,6 +55,7 @@ function updateLogo(currentTime) {
             velocityY *= -1;
             y = 0
         }
+        moveLogo(x, y);
 
         x += velocityX * deltaTime * 0.1;
         y += velocityY * deltaTime * 0.1;

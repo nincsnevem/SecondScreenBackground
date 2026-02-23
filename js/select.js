@@ -8,13 +8,13 @@ const analogButton = document.getElementById("option-analog");
 analogButton.addEventListener("click", () => setVisible("analog"));
 
 const animOffButton = document.getElementById("game-anim-off");
-animOffButton.addEventListener("click", () => setVisible("off"))
+animOffButton.addEventListener("click", () => setVisible("off"));
 
 const animDVDButton = document.getElementById("game-anim-dvd");
-animDVDButton.addEventListener("click", () => setVisible("dvd"))
+animDVDButton.addEventListener("click", () => setVisible("dvd"));
 
 const snakeButton = document.getElementById("game-anim-snake");
-snakeButton.addEventListener("click", () => setVisible("snake"))
+snakeButton.addEventListener("click", () => setVisible("snake"));
 
 const digitalClock = document.getElementById("digitalClockContainer");
 const analogClock = document.getElementById("analogClockContainer");

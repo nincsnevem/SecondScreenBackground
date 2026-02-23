@@ -130,7 +130,7 @@ body::-webkit-scrollbar-button {
 }
 
 #clockSettings:hover {
-    width: 24vw;
+    width: max(24vw, 350px);
     transition: all 0.4s ease;
 }
 
@@ -159,7 +159,7 @@ body::-webkit-scrollbar-button {
     font-style: normal;
     opacity: 0;
     transition: flex-grow 0.5s ease, opacity 0.4s ease;
-    font-size: max(1vw, 4px);
+    font-size: max(1.1vw, 15px);
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
@@ -192,23 +192,24 @@ body::-webkit-scrollbar-button {
 }
 
 .icon {
-    width: max(2vw, 40px);
-    height: max(2vw, 40px);
+    width: max(2vw, 36px);
+    height: max(2vw, 36px);
     pointer-events: none;
     position: absolute;
-    left: max(0.5vw, 5px);
+    top: 50%;
+    left: 50%;
     opacity: 1;
     fill: var(--bgcolor);
     padding: 0;
     margin: 0;
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.4));
+    transform: translate(-50%, -50%);
 }
 
 #colorIcon {
     width: max(2.2vw, 42px);
     height: max(2.2vw, 42px);
     flex: 1;
-    left: max(0.4vw, 5px);
     transition: left 0.8s ease, opacity 0.8s ease;
 }
 
@@ -392,7 +393,7 @@ body::-webkit-scrollbar-button {
     font-style: normal;
     opacity: 0;
     transition: flex-grow 0.5s ease, opacity 0.4s ease;
-    font-size: max(1vw, 4px);
+    font-size: max(1.1vw, 15px);
     cursor: pointer;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
     align-content: center;
@@ -404,7 +405,7 @@ body::-webkit-scrollbar-button {
 
 #gameAnimationSettings:hover {
     transition: all 0.8s;
-    width: 20vw;
+    width: max(20vw,300px);
     padding-right: 0.5vw;
 }
 

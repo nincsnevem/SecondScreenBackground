@@ -47,26 +47,26 @@ function setVisible(status) {
         el.classList.remove("active");
     });
 
-    if (status == "off") {
-
-        offButton.classList.add("active");
-        animOffButton.classList.add("active");
+    offButton.classList.add("active");
+    animOffButton.classList.add("active");
 
 
-    }
     if (status == "digital") {
+        document.querySelectorAll(".clockOption.active").forEach(el => {
+        el.classList.remove("active");
+        });
 
         digitalButton.classList.add("active");
-        animOffButton.classList.add("active");
         digitalClock.style.setProperty("visibility", "visible");
         digitalClock.style.setProperty("opacity", "1");
 
 
     }
     if (status == "analog") {
-
+        document.querySelectorAll(".clockOption.active").forEach(el => {
+        el.classList.remove("active");
+        });
         analogButton.classList.add("active");
-        animOffButton.classList.add("active")
         analogClock.style.setProperty("visibility", "visible");
         analogClock.style.setProperty("opacity", "1");
 
@@ -74,7 +74,11 @@ function setVisible(status) {
 
 
     if (status == "dvd") {
-        offButton.classList.add("active");
+        document.querySelectorAll(".game-anim-option.active").forEach(el => {
+        el.classList.remove("active");
+        });
+
+
         animDVDButton.classList.add("active");
 
         dvdLogo.style.setProperty("visibility", "visible");
@@ -83,7 +87,10 @@ function setVisible(status) {
     }
 
     if (status == "snake") {
-        offButton.classList.add("active");
+        
+        document.querySelectorAll(".game-anim-option.active").forEach(el => {
+        el.classList.remove("active");
+        });
         snakeButton.classList.add("active");
 
         snakeContainer.style.setProperty("visibility", "visible");

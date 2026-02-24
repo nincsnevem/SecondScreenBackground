@@ -131,7 +131,7 @@ body::-webkit-scrollbar-button {
 
 #clockSettings:hover {
     width: max(24vw, 350px);
-    transition: all 0.4s ease;
+    transition: all 0.8s ease;
 }
 
 .clockOption {
@@ -179,7 +179,7 @@ body::-webkit-scrollbar-button {
 
 #clockSettings:hover #clockIcon {
     opacity: 0;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.1s ease;
 }
 
 #option-analog {
@@ -215,12 +215,12 @@ body::-webkit-scrollbar-button {
 
 #colorSetting:hover #colorIcon {
     opacity: 0;
-    left: 5vw;
+    left: 20%;
     transition: left 0.8s ease, opacity 0.8s ease;
 }
 
-#clockIcon {
-    transition: opacity 0.8s ease;
+#clockIcon {  
+    opacity: 1;
 }
 
 #background {
@@ -367,7 +367,7 @@ body::-webkit-scrollbar-button {
     filter: drop-shadow(0px 10px 8px rgba(0, 0, 0, 0.797)) drop-shadow(0px -10px 8px var(--bgcolorlight));
 }
 
-.game-anim-option {
+.game-anim-option, #simple-anim-option{
     pointer-events: none;
     height: max(2vw, 40px);
     /**/
@@ -424,7 +424,9 @@ body::-webkit-scrollbar-button {
 
 #gameAnimationSettings:hover #gameIcon {
     opacity: 0;
+    left: 20%;
     transition: opacity 0.5s ease;
+    transition: left 0.8s ease;
 }
 
 #gameIcon {
@@ -435,7 +437,12 @@ body::-webkit-scrollbar-button {
     position: relative;
 }
 
-.snakeContainer {
+#snakeContainer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
     transition: opacity 0.8s ease;
 }
 
@@ -449,5 +456,48 @@ body::-webkit-scrollbar-button {
     height: 4.8vmin;
     transform: translate(0, 0);
 }
+#gradientContainer{
+    visibility: hidden;
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100vw;
+    height: 100vh;
+    background-image: radial-gradient(circle,
+    var(--bgcolor) var(--animationPercent1), 
+    var(--contrastcolor) var(--animationPercent2),
+    var(--bgcolor) var(--animationPercent3));
+
+    animation: gradientAnimation 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes gradientAnimation{
+   from{--animationPercent1: 5%; --animationPercent2: 10%;--animationPercent3: 15%;}
+   to{--animationPercent1: 15%; --animationPercent2: 20%;--animationPercent3: 25%;}
+}
+
+
+@property --animationPercent1{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 10%;
+}
+@property --animationPercent2{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 20%;
+}
+@property --animationPercent3{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 30%;
+}
+@property --animationPercent4{
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 40%;
+}
+
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');

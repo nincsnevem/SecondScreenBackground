@@ -200,7 +200,7 @@ body::-webkit-scrollbar-button {
     pointer-events: none;
     position: absolute;
     top: 50%;
-    left: max(1.5vw, 30px);
+    left: max(1.5vw, 25.5px);
     opacity: 1;
     fill: var(--bgcolor);
     padding: 0;
@@ -318,8 +318,9 @@ body::-webkit-scrollbar-button {
     color: var(--altcolor);
     margin: 0;
     position: fixed;
-    top: 30vh;
-    left: 5vw;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 0;
     line-height: 1;
     display: inline;
@@ -354,6 +355,7 @@ body::-webkit-scrollbar-button {
     z-index: 1;
     transform: translate(0, 0);
     visibility: visible;
+    transition: opacity ease 0.4s, visibility ease 0.4s;
 }
 
 #dvdLogo>svg {
@@ -388,7 +390,7 @@ body::-webkit-scrollbar-button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    transition: opacity 0.8s ease;
+    transition: opacity 0.4s ease, visibility ease 0.4s;
 }
 
 .snakeElement {

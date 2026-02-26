@@ -81,6 +81,8 @@ function setVisible(status) {
         analogClock.style.setProperty("visibility", "visible");
         analogClock.style.setProperty("opacity", "1");
 
+        requestAnimationFrame(updateClock);
+
     }
 
 

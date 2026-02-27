@@ -126,13 +126,9 @@ body::-webkit-scrollbar-button {
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
 }
 
-#clockSettings {
-    transition: all 0.8s ease;
-}
-
 #clockSettings:hover {
     width: max(24vw, 350px);
-    transition: all 0.8s ease;
+    transition: all 0.5s ease;
 }
 
 .settingsButton>button {
@@ -171,7 +167,7 @@ body::-webkit-scrollbar-button {
     pointer-events: auto;
     flex-grow: 1;
     opacity: 1;
-    transition: flex-grow 0.8s ease, opacity 0.5s ease;
+    transition: flex-grow 0.5s ease, opacity 0.5s ease;
 }
 
 .settingsButton:hover button.active {
@@ -354,7 +350,7 @@ body::-webkit-scrollbar-button {
     justify-content: center;
     z-index: 1;
     transform: translate(0, 0);
-    visibility: visible;
+    visibility: hidden;
     transition: opacity ease 0.4s, visibility ease 0.4s;
 }
 
@@ -404,6 +400,12 @@ body::-webkit-scrollbar-button {
     transform: translate(0, 0);
 }
 
+#simpleAnimationSettings:hover {
+    transition: all 0.5s;
+    width: max(22vw, 330px);
+    padding-right: 0.5vw;
+}
+
 #gradientContainer {
     visibility: hidden;
     position: fixed;
@@ -415,10 +417,42 @@ body::-webkit-scrollbar-button {
     animation: gradientAnimation 5s ease-in-out infinite alternate;
 }
 
-#simpleAnimationSettings:hover {
-    transition: all 0.8s;
-    width: max(15vw, 225px);
-    padding-right: 0.5vw;
+#bubblesContainer {
+    visibility: hidden;
+}
+
+.bubble {
+    transform: translateY(120vh);
+    border-radius: 50%;
+    border: solid 0.2vmin var(--altcolor);
+    background-color: transparent;
+    filter: drop-shadow(0 0 0.2vmin var(--altcolorlight));
+}
+
+.bubbles {
+    justify-content: space-evenly;
+    width: 100vw;
+    position: fixed;
+    left: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.bubbles>.bubble {
+    width: calc((5 - var(--bubbleRow)) * 1vmin);
+    height: calc((5 - var(--bubbleRow)) * 1vmin);
+    animation: bubbleAnimation calc(100 / var(--bubbleDelay) * 1.5s * (var(--bubbleRow)*0.6 + 1)) linear infinite;
+    filter: drop-shadow(0 00.2vmin var(--altcolorlight)) blur(calc(0.1vmin * var(--bubbleRow)));
+    opacity: 0.4;
+}
+
+@keyframes bubbleAnimation {
+    from {
+        transform: scale(100%) translateY(120vh);
+    }
+    to {
+        transform: scale(150%) translateY(-20vh);
+    }
 }
 
 @keyframes gradientAnimation {
@@ -452,10 +486,16 @@ body::-webkit-scrollbar-button {
     initial-value: 30%;
 }
 
-@property --animationPercent4 {
-    syntax: "<percentage>";
+@property --bubbleDelay {
+    syntax: "<integer>";
     inherits: false;
-    initial-value: 40%;
+    initial-value: 2;
+}
+
+@property --bubbleRow {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Nova+Mono&family=Spline+Sans+Mono:ital,wght@0,300..700;1,300..700&display=swap');

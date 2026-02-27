@@ -22,11 +22,15 @@ simpleOffButton.addEventListener("click", () => setVisible("off"));
 const simpleCircleButton = document.getElementById("simple-anim-circle");
 simpleCircleButton.addEventListener("click", () => setVisible("circle"));
 
+const simpleBubbleButton = document.getElementById("simple-anim-bubble");
+simpleBubbleButton.addEventListener("click", () => setVisible("bubble"));
+
 const digitalClock = document.getElementById("digitalClockContainer");
 const analogClock = document.getElementById("analogClockContainer");
 const dvdLogo = document.getElementById("dvdLogo");
 const snakeContainer = document.getElementById("snakeContainer");
 const circleGradient = document.getElementById("gradientContainer");
+const bubbleContainer = document.getElementById("bubbleContainer")
 
 
 
@@ -52,6 +56,9 @@ function setVisible(status) {
 
     circleGradient.style.setProperty("visibility", "hidden");
     circleGradient.style.setProperty("opacity", "0");
+
+    bubbleContainer.style.setProperty("visibility", "hidden");
+    bubbleContainer.style.setProperty("opacity", "0");
 
     document.querySelectorAll(".active").forEach(el => {
         el.classList.remove("active");
@@ -116,6 +123,14 @@ function setVisible(status) {
         simpleCircleButton.classList.add("active");
         circleGradient.style.setProperty("visibility", "visible");
         circleGradient.style.setProperty("opacity", "1");
+    }
+    if (status === "bubble") {
+        document.querySelectorAll(".simple-anim-option.active").forEach(el => {
+            el.classList.remove("active");
+        });
+        simpleBubbleButton.classList.add("active");
+        bubbleContainer.style.setProperty("visibility", "visible");
+        bubbleContainer.style.setProperty("opacity", "1");
     }
     localStorage.setItem("Status", status);
 }

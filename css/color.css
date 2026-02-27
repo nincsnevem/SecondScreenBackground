@@ -413,8 +413,12 @@ body::-webkit-scrollbar-button {
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-image: radial-gradient(circle, var(--bgcolor) var(--animationPercent1), var(--contrastcolor) var(--animationPercent2), var(--bgcolor) var(--animationPercent3));
-    animation: gradientAnimation 5s ease-in-out infinite alternate;
+    background-image: repeating-radial-gradient(circle, /**/
+    var(--altcolor) var(--animationPercent1), /**/
+    var(--bgcolor) var(--animationPercent2), /**/
+    var(--bgcolor) var(--animationPercent3), /**/
+    var(--altcolor) var(--animationPercent4));
+    animation: gradientAnimation 5s linear infinite;
 }
 
 #bubblesContainer {
@@ -457,14 +461,16 @@ body::-webkit-scrollbar-button {
 
 @keyframes gradientAnimation {
     from {
-        --animationPercent1: 5%;
-        --animationPercent2: 10%;
-        --animationPercent3: 15%;
+        --animationPercent1: 10%;
+        --animationPercent2: 20%;
+        --animationPercent3: 30%;
+        --animationPercent4: 40%;
     }
     to {
-        --animationPercent1: 20%;
-        --animationPercent2: 25%;
-        --animationPercent3: 30%;
+        --animationPercent1: 40%;
+        --animationPercent2: 50%;
+        --animationPercent3: 60%;
+        --animationPercent4: 70%;
     }
 }
 
@@ -481,6 +487,12 @@ body::-webkit-scrollbar-button {
 }
 
 @property --animationPercent3 {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 30%;
+}
+
+@property --animationPercent4 {
     syntax: "<percentage>";
     inherits: false;
     initial-value: 30%;
